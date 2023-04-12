@@ -40,4 +40,12 @@ const addStudentPost = async (req,res) => {
     }
 }
 
-export {homepage, findStudent, findStudentbyPost, addStudentPost};
+const deleteStudentByName = async (req, res) => {
+    try{
+        res.send(await Student.deleteOne({fname: req.body.fname, lname: req.body.lname}));
+    }catch(err){
+        res.status(500).send(err.message)
+    }
+}
+
+export {homepage, findStudent, findStudentbyPost, addStudentPost, deleteStudentByName};
