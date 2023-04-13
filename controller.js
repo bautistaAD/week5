@@ -39,7 +39,9 @@ const addStudentPost = async (req,res) => {
         res.status(500).send(err.message);
     }
 }
+// TRY THIS!
 
+//delete data by student name
 const deleteStudentByName = async (req, res) => {
     try{
         res.send(await Student.deleteOne({fname: req.body.fname, lname: req.body.lname}));
@@ -48,7 +50,7 @@ const deleteStudentByName = async (req, res) => {
     }
 }
 
-
+//update students age
 const updateStudentAge = async (req ,res) => {
     try
     {
@@ -62,6 +64,7 @@ const updateStudentAge = async (req ,res) => {
     }
 }
 
+// create new instance of student and save it to data base
 const createStudent = async (req, res) => {
     try
     {
@@ -81,6 +84,7 @@ const createStudent = async (req, res) => {
 
 }
 
+//read all data
 const readData = async (req, res) => {
     try
     {
