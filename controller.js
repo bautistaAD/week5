@@ -62,4 +62,22 @@ const updateStudentAge = async (req ,res) => {
     }
 }
 
-export {homepage, findStudent, findStudentbyPost, addStudentPost, deleteStudentByName, updateStudentAge};
+const createStudent = async (req, res) => {
+    try
+    {
+        const newStudent = new Student({
+            stdnum: req.body.stdnum,
+            fname: req.body.fname,
+            lname: req.body.lname,
+            age: req.body.age
+        })
+
+        let data = await newStudent.save();
+        res.send(data);
+    }catch(err)
+    {
+        res.status(500).send(err.message);
+    }
+
+}
+export {homepage, findStudent, findStudentbyPost, addStudentPost, deleteStudentByName, updateStudentAge, createStudent};
