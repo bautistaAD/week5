@@ -44,8 +44,22 @@ const deleteStudentByName = async (req, res) => {
     try{
         res.send(await Student.deleteOne({fname: req.body.fname, lname: req.body.lname}));
     }catch(err){
-        res.status(500).send(err.message)
+        res.status(500).send(err.message);
     }
 }
 
-export {homepage, findStudent, findStudentbyPost, addStudentPost, deleteStudentByName};
+
+const updateStudentAge = async (req ,res) => {
+    try
+    {
+        let updateInfo = await Student.findOne({stdnum: req.body.stdnum});
+        updateInfo.age = req.body.age;
+        let data = await updateInfo.save();
+        res.send(data);
+
+    }catch(err){
+        res.status(500).send(err.message);
+    }
+}
+
+export {homepage, findStudent, findStudentbyPost, addStudentPost, deleteStudentByName, updateStudentAge};
