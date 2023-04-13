@@ -24,8 +24,14 @@ import needle from "needle";
 //         console.log(res.body);
 //     });
 
-needle.post("http://localhost:3000/delete-student-by-name", 
-    {fname: "Ellie", lname: "Lang"} , (req, res) => {
-        console.log(res.body);
+// needle.post("http://localhost:3000/delete-student-by-name", 
+//     {fname: "Buck", lname: "Widdocks"} , (req, res) => {
+//         console.log(res.body);
+//     }
+// );
+
+needle.post("http://localhost:3000/update-student-age",
+    {stdnum: "4938779315", age: 19}, (req, res) => {
+        console.log("successfully updated");
     }
 );
