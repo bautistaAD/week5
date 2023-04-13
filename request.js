@@ -35,3 +35,13 @@ needle.post("http://localhost:3000/update-student-age",
         console.log("successfully updated");
     }
 );
+
+needle.post("http://localhost:3000/create-student",
+    {   stdnum: "25372957239",
+        fname: "Roberta",
+        lname: "Salazar",
+        age: 30
+    }, (req, res) => {
+        console.log(res.body);
+    }
+);
