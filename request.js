@@ -30,18 +30,30 @@ import needle from "needle";
 //     }
 // );
 
-needle.post("http://localhost:3000/update-student-age",
-    {stdnum: "4938779315", age: 19}, (req, res) => {
-        console.log("successfully updated");
-    }
-);
+// needle.post("http://localhost:3000/update-student-age",
+//     {stdnum: "4938779315", age: 19}, (req, res) => {
+//         console.log("successfully updated");
+//     }
+// );
 
-needle.post("http://localhost:3000/create-student",
-    {   stdnum: "25372957239",
-        fname: "Roberta",
-        lname: "Salazar",
-        age: 30
-    }, (req, res) => {
+// needle.post("http://localhost:3000/create-student",
+//     {   stdnum: "25372957239",
+//         fname: "Roberta",
+//         lname: "Salazar",
+//         age: 30
+//     }, (req, res) => {
+//         console.log(res.body);
+//     }
+// );
+
+// needle.post('http://localhost:3000/read-data',
+//     {fname: "Roberta", lname: "Salazar"}, (req, res) => {
+//         console.log(res.body);
+//     }
+// );
+
+needle.post('http://localhost:3000/read-data',
+    {}, (req, res) => {
         console.log(res.body);
     }
 );
