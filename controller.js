@@ -80,4 +80,15 @@ const createStudent = async (req, res) => {
     }
 
 }
-export {homepage, findStudent, findStudentbyPost, addStudentPost, deleteStudentByName, updateStudentAge, createStudent};
+
+const readData = async (req, res) => {
+    try
+    {
+        let data = await Student.find({});
+        res.send(data);
+    }catch(err)
+    {
+        res.status(500).send(err.message);
+    }
+}
+export {homepage, findStudent, findStudentbyPost, addStudentPost, deleteStudentByName, updateStudentAge, createStudent, readData};
